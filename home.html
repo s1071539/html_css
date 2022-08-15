@@ -41,28 +41,33 @@
             text-align: center;
             font-size: 8px;
         }
+
         /* phones */
-        @media (min-width: 576px) { 
-            #department > div.jumbotron{
+        @media (min-width: 576px) {
+            #department>div.jumbotron {
                 display: flex;
                 flex-direction: column;
             }
         }
+
         /* tablets */
         @media (min-width: 768px) {
-            #department > div.jumbotron{
+            #department>div.jumbotron {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
             }
         }
-        #about  p{
+
+        #about p {
             line-height: 45px;
             text-indent: 30px;
             font-size: 1.5rem;
         }
 
-
+        #food .card-body {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -77,6 +82,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
 
     <div class="container-fluid  d-flex flex-column outter-div">
         <header>
@@ -105,7 +111,7 @@
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#transportation"
-                                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">交通資訊</a>
+                                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">校園資訊</a>
                         </li>
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#food"
@@ -185,7 +191,7 @@
                 <!-- 各系網站 -->
                 <div class="tab-pane fade" id="department" role="tabpanel" aria-labelledby="department-tab">
                     <div class="jumbotron">
-                        <dl>
+                        <dl style="min-width: 150px;">
                             <dt><i class="bi bi-play-fill"></i><a href="http://www.cg.yzu.edu.tw/"
                                     target="_blank">工程學院</a></dt>
                             <ul>
@@ -197,7 +203,7 @@
                             </ul>
                         </dl>
 
-                        <dl>
+                        <dl style="min-width: 150px;">
                             <dt><i class="bi bi-play-fill"></i><a href="https://www.ci.yzu.edu.tw/#/"
                                     target="_blank">資訊學院</a></dt>
                             <ul>
@@ -209,7 +215,7 @@
                             </ul>
                         </dl>
 
-                        <dl>
+                        <dl style="min-width: 150px;">
                             <dt><i class="bi bi-play-fill"></i><a href="http://www.cm.yzu.edu.tw/"
                                     target="_blank">管理學院</a></dt>
                             <ul>
@@ -221,7 +227,7 @@
                             </ul>
                         </dl>
 
-                        <dl>
+                        <dl style="min-width: 150px;">
                             <dt><i class="bi bi-play-fill"></i><a href="https://www.hs.yzu.edu.tw/"
                                     target="_blank">人文社會學院</a></dt>
                             <ul>
@@ -238,15 +244,44 @@
 
                     </div>
                 </div>
+                <!-- 校園 -->
                 <div class="tab-pane fade" id="transportation" role="tabpanel" aria-labelledby="transportation-tab">
                     <div class="jumbotron" style="text-align: center;">
                         <img src="img/campus.jpg" alt="campus" class="" style="width: 100%; max-width: 800px;">
                     </div>
                 </div>
+                <!-- 美食 -->
                 <div class="tab-pane fade" id="food" role="tabpanel" aria-labelledby="food-tab">
                     <div class="jumbotron">
-                        <h1>美食資訊</h1>
-                        <p>学的不仅是技术，更是梦想！！！</p>
+                        <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                            <div class="card border-primary mb-3 mr-3" style="max-width: 18rem;">
+                                <div class="card-header"><a href="https://www.facebook.com/sf.muffin/timeline"
+                                        target="_blank">微笑的魚</a></div>
+                                <div class="card-body text-primary"
+                                    onclick="foodCardClick('24.966778684110956, 121.26385255630666', '微笑的魚')">
+                                    <p class="card-text">元智學生必吃的鬆餅店，飲料也很好喝！一入學就會被學長姐推薦的店</p>
+                                </div>
+                            </div>
+                            <div class="card border-primary mb-3 mr-3" style="max-width: 18rem;">
+                                <div class="card-header"><a
+                                        href="https://restaurant-71734.business.site/?utm_source=gmb&utm_medium=referral"
+                                        target="_blank">貓寶涼麵</a></div>
+                                <div class="card-body text-primary"
+                                    onclick="foodCardClick('24.967828943743484, 121.2634075693185', '貓寶涼麵')">
+                                    <p class="card-text">元智必吃的涼麵！加芥末、加辣、加半熟蛋，再來碗湯，超級讚</p>
+                                </div>
+                            </div>
+                            <div class="card border-primary mb-3 mr-3" style="max-width: 18rem;">
+                                <div class="card-header"><a
+                                        href="https://www.facebook.com/%E9%98%BF%E5%BF%A0%E9%B9%B9%E9%85%A5%E9%9B%9E%E9%9B%9E%E6%8E%92%E5%B0%88%E8%B3%A3%E5%BA%97-564158347049158/"
+                                        target="_blank">阿忠鹹酥雞</a></div>
+                                <div class="card-body text-primary"
+                                    onclick="foodCardClick('24.96692555967175, 121.26248062069494', '阿忠鹹酥雞')">
+                                    <p class="card-text">想吃炸的宵夜首選，記得打電話叫餐，才不用在現場等很久～</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="googleMap" style="width:100%;height:400px;"></div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="course" role="tabpanel" aria-labelledby="course-tab">
@@ -275,6 +310,39 @@
 
 
     </div>
+    <script>
+        function foodCardClick(location, shopName) {
+            let myCemter = new google.maps.LatLng(location.split(',')[0], location.split(',')[1])
+            let mapProp = {
+                center: myCemter,
+                zoom: 18,
+            };
+            let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            let marker = new google.maps.Marker({ position: myCemter });
+            marker.setMap(map);
+            let infowindow = new google.maps.InfoWindow({
+                content: shopName
+            });
+
+            infowindow.open(map, marker);
+        }
+
+        function myMapInit() {
+            let myCemter = new google.maps.LatLng(24.97029847094522, 121.2633750935352)
+            let mapProp = {
+                center: myCemter,
+                zoom: 18,
+            };
+            let map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            let marker = new google.maps.Marker({ position: myCemter });
+
+            marker.setMap(map);
+        }
+    </script>
+    <!-- Google map -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8pfhqMvxIxEmPYTStOion4Td_f11zVKY&callback=myMapInit"></script>
 
 </body>
 
